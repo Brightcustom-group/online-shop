@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Online Shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-6xl mx-auto py-10 px-4">
+        <h1 class="text-4xl font-bold text-center mb-10">Online Shop</h1>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Product Cards -->
+            <script>
+                const products = [
+                    {
+                        name: "Wooden Baby Rattles",
+                        category: "Baby Toy",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/baby-wooden-rattles-and-toys-on-pink-background-is-2024-12-05-17-40-27-utc.jpg?sp=r&st=2025-09-10T18:33:20Z&se=2025-09-11T02:48:20Z&spr=https&sv=2024-11-04&sr=b&sig=H12Fbk%2BFwf1O6djhPzv0ohmVJZVs11fBGDHTvuZzQNg%3D"
+                    },
+                    {
+                        name: "Children Hearing Aid",
+                        category: "Baby Toy",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/creative-hearing-aid-for-children-stands-next-to-a-2025-08-25-18-28-57-utc.jpg?sp=r&st=2025-09-10T18:34:31Z&se=2025-09-11T02:49:31Z&spr=https&sv=2024-11-04&sr=b&sig=wdTn9zk9v%2FWkCAIoJ7HXmtYwiZuTcxdReZw8NVoqM5s%3D"
+                    },
+                    {
+                        name: "Giraffe Stacking Toy",
+                        category: "Baby Toy",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/cute-giraffe-stacking-toy-with-plush-pieces-on-a-b-2025-02-11-21-08-05-utc.jpg?sp=r&st=2025-09-10T18:34:43Z&se=2025-09-11T02:49:43Z&spr=https&sv=2024-11-04&sr=b&sig=k3Ww4TSOK%2BjXDD7hdnLRL75SNMIyQUKHrtezx5dg4a8%3D"
+                    },
+                    {
+                        name: "Glass Perfume Bottle",
+                        category: "Perfume",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/glass-perfume-bottle-2025-02-10-09-54-13-utc.jpg?sp=r&st=2025-09-10T18:34:58Z&se=2025-09-11T02:49:58Z&spr=https&sv=2024-11-04&sr=b&sig=dPStMfIuwK%2Bs2TFTdh0fgVUT8MBjqhbZo7y5DtcBarA%3D"
+                    },
+                    {
+                        name: "Hair Care Accessories",
+                        category: "Lotion",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/hair-care-accessories-against-rustic-wooden-backgr-2025-03-25-08-31-55-utc.jpg?sp=r&st=2025-09-10T18:35:11Z&se=2025-09-11T02:50:11Z&spr=https&sv=2024-11-04&sr=b&sig=cark3wnv5ROtGYnqIh8FmCNOQY%2Fw4646ZJruQqJ4YOk%3D"
+                    },
+                    {
+                        name: "Hand Sanitizer Gel",
+                        category: "Lotion",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/hand-satinizer-gel-for-hand-hygiene-coronavirus-c-2025-03-25-12-03-13-utc.jpg?sp=r&st=2025-09-10T18:35:23Z&se=2025-09-11T02:50:23Z&spr=https&sv=2024-11-04&sr=b&sig=eta7bxEimruVtKEyjhKOr0JoN6u5Y4dGQt2j1IgArHg%3D"
+                    },
+                    {
+                        name: "Patterned Packaging",
+                        category: "Perfume",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/pattern-2024-09-14-19-03-51-utc.jpg?sp=r&st=2025-09-10T18:35:35Z&se=2025-09-11T02:50:35Z&spr=https&sv=2024-11-04&sr=b&sig=KuUZYfkysxU6SuVkwmlvF6DVdmu0nc9Lqm6qMOgVbCs%3D"
+                    },
+                    {
+                        name: "Cosmetic Liquid",
+                        category: "Lotion",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/professional-cosmetic-liquid-being-demonstrated-by-2024-10-20-22-18-25-utc.jpg?sp=r&st=2025-09-10T18:35:47Z&se=2025-09-11T02:50:47Z&spr=https&sv=2024-11-04&sr=b&sig=JNp%2BHMwlz90hYTr%2BuoigmkCDwO8h8O4gBGd%2FL%2BqpOV8%3D"
+                    },
+                    {
+                        name: "Asian Woman Perfume",
+                        category: "Perfume",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/tender-asian-woman-with-closed-eyes-holding-perfum-2024-11-14-05-30-16-utc.jpg?sp=r&st=2025-09-10T18:35:59Z&se=2025-09-11T02:50:59Z&spr=https&sv=2024-11-04&sr=b&sig=cukXPjrVtap29EfFaqam1%2FfOnTC3QpUmsJr%2Bwmb7VJA%3D"
+                    },
+                    {
+                        name: "Liquid Soap Bottle",
+                        category: "Lotion",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/white-cosmetic-liquid-soap-dispenser-bottle-mockup-2025-01-27-16-39-45-utc.jpg?sp=r&st=2025-09-10T18:36:09Z&se=2025-09-11T02:51:09Z&spr=https&sv=2024-11-04&sr=b&sig=Crv72A4lZaoy3QStlFS%2BAwHeJNnYuSlS3XyHmQ1UQeU%3D"
+                    },
+                    {
+                        name: "Water Droplet Bottle",
+                        category: "Lotion",
+                        url: "https://onlineshopstorage2025.blob.core.windows.net/products/white-dispenser-bottle-with-water-droplets-surroun-2025-01-09-09-02-36-utc.jpg?sp=r&st=2025-09-10T18:36:20Z&se=2025-09-11T02:51:20Z&spr=https&sv=2024-11-04&sr=b&sig=ieCFMkDf1oxZo08CO26L061QoVC0jaNIfu6npPkijNs%3D"
+                    }
+                ];
+
+                products.forEach(product => {
+                    document.write(`
+            <div class="bg-white rounded-lg shadow-md overflow-hidden">
+              <img src="${product.url}" alt="${product.name}" class="w-full h-48 object-cover" />
+              <div class="p-4">
+                <h2 class="text-lg font-semibold">${product.name}</h2>
+                <p class="text-sm text-gray-500">Category: ${product.category}</p>
+              </div>
+            </div>
+          `);
+                });
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>
